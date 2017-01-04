@@ -1,5 +1,6 @@
 CC = gcc
 CFLAGS =-std=c89 -Wall  -Werror -pedantic
+LFLAGS =-lSDL2
 EXE = bin/game
 SRC = src
 OFILES = $(patsubst %.c,%.o,$(wildcard $(SRC)/*.c)) 
@@ -7,10 +8,10 @@ OFILES = $(patsubst %.c,%.o,$(wildcard $(SRC)/*.c))
 all: $(EXE)
 
 $(EXE): $(OFILES)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@ $(LFLAGS)
 
 $(SRC)/%.o: $(SRC)/%.c
-	$(CC) $(CFLAGS) -c $^ -o $@
+	$(CC) $(CFLAGS) -c $^  -o $@
 
 clean:
 	rm $(SRC)/*.o && rm $(EXE)
