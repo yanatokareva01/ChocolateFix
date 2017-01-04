@@ -7,7 +7,7 @@ OFILES = $(patsubst %.c,%.o,$(wildcard $(SRC)/*.c))
 all: $(EXE)
 
 $(EXE): $(OFILES)
-	$(CC) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 
 $(SRC)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $^ -o $@
