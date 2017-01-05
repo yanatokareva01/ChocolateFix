@@ -2,6 +2,13 @@
 #include "main.h"
 #include "app_window.h"
 #include "load_img.h"
+#include "levels.h"
+#include "game.h"
+
+/*static int gameRunning = 1;*/
+static ProgramState_t state = START;
+static Game_t game;
+
 /* Initializes all resources*/
 static void resource_init();
 
@@ -14,7 +21,8 @@ static void main_loop();
 /* Frees all resources*/
 static void clean_up();
 
-int main() {
+int main(int argc, char** argv) {
+	if (argc == 2){  create_levels(ENCODED_LEVELS); return 0; } 
 	resource_init();
 	game_init();
 
@@ -31,7 +39,9 @@ static void resource_init() {
 }
 
 static void game_init() {
-
+	load_levels(game.levels, ENCODED_LEVELS);
+	
+	state = START;
 }
 
 static void main_loop() {
