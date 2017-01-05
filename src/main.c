@@ -1,6 +1,7 @@
 #include "SDL2/SDL.h"
 #include "main.h"
 #include "app_window.h"
+#include "load_img.h"
 /* Initializes all resources*/
 static void resource_init();
 
@@ -26,6 +27,7 @@ int main() {
 
 static void resource_init() {
 	init_app_window(SCREEN_TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
+	load_imgs();
 }
 
 static void game_init() {

@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS =-std=c89 -Wall  -Werror -pedantic
-LFLAGS =-lSDL2
+LFLAGS =-lSDL2 -lSDL2_image
 EXE = bin/game
 SRC = src
 OFILES = $(patsubst %.c,%.o,$(wildcard $(SRC)/*.c)) 
