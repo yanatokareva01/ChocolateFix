@@ -8,5 +8,5 @@ typedef struct {
 } Game_t;
 
 void init_game();
-
+void render();
 #endif

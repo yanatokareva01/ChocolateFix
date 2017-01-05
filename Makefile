@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS =-std=c89 -Wall  -Werror -pedantic
+CFLAGS =-std=c89 -Wall  -Werror -pedantic -g
 LFLAGS =-lSDL2 -lSDL2_image
 EXE = bin/game
 SRC = src

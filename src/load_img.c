@@ -5,10 +5,14 @@
 
 SDL_Surface *load_img(const char* filename);
 
-SDL_Surface* candies[9];
 
 void load_imgs() {
 	load_candies_imgs();
+	load_background_imgs();
+}
+
+void load_background_imgs() {
+	grid = load_img("assets/grid.png");
 }
 
 void load_candies_imgs() {
@@ -21,6 +25,7 @@ void load_candies_imgs() {
 	candies[6] = load_img("assets/7.png");
 	candies[7] = load_img("assets/8.png");
 	candies[8] = load_img("assets/9.png");
+	if (candies[0] == NULL) printf("null((");
 }
 
 SDL_Surface* load_img( const char* filename ) {

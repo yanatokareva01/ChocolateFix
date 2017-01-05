@@ -5,7 +5,7 @@
 #include "levels.h"
 #include "game.h"
 
-/*static int gameRunning = 1;*/
+static int gameRunning = 1;
 static ProgramState_t state = START;
 static Game_t game;
 
@@ -44,8 +44,32 @@ static void game_init() {
 	state = START;
 }
 
-static void main_loop() {
+static void process_l_mouse_button(SDL_MouseButtonEvent button) {
+	
+}
 
+static void process_events() {
+	static SDL_Event event;
+	
+	while (SDL_PollEvent(&event)) {
+		
+		switch (event.type) {
+			case SDL_QUIT:
+				gameRunning = 0;
+				break;
+			case SDL_MOUSEBUTTONDOWN:
+				if (event.button.button == SDL_BUTTON_LEFT)
+					process_l_mouse_button(event.button);
+				break;
+		}
+	}
+}
+
+static void main_loop() {
+	while( gameRunning ) {
+		process_events();
+		render();
+	}	
 }
 
 static void clean_up() {

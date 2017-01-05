@@ -2,8 +2,8 @@
 #define _MAIN
 
 #define SCREEN_TITLE "Chocolate Fix"
-#define SCREEN_WIDTH 500
-#define SCREEN_HEIGHT 500
+#define SCREEN_WIDTH 1000
+#define SCREEN_HEIGHT 650
 #define ENCODED_LEVELS "resources/levels"
 
 typedef enum {
