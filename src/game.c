@@ -17,8 +17,7 @@ void init_game_entities() {
 	for (i = 0; i < 9; ++i)
 	{
 		candies[i].is_pressed = 0;
-		candies[i].x = -1;
-		candies[i].y = -1;
+		candies[i].id = -1;
 		candies[i].big_candy_image = big_candies_imgs[i];
 		candies[i].small_candy_image = small_candies_imgs[i];
 	}

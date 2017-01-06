@@ -5,8 +5,7 @@
 typedef struct {
 	SDL_Surface* big_candy_image;
 	SDL_Surface* small_candy_image;
-	int x;
-	int y;
+	int id;
 	int is_pressed;
 } Candy_t;
 
