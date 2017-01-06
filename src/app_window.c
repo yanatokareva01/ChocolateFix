@@ -28,5 +28,5 @@ void set_surface( int x, int y, SDL_Surface* surface ) {
 }
 
 void set_background() {
-	SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 252, 110, 81));
+	SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 206, 84));
 }

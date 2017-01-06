@@ -19,4 +19,3 @@ void draw_img_with_coord( SDL_Surface* surface, int x, int y ) {
 void draw_img_with_coord_and_offset( SDL_Surface* surface, int x, int y, int x_offset, int y_offset ) {
 	set_surface( x + x_offset, y + y_offset, surface);
 }
-
