@@ -23,6 +23,11 @@ void process_l_mouse_button(SDL_MouseButtonEvent button) {
 		return;
 	}
 
+	if (on_button_clicked(clicked) == 1) {
+		check_answer();
+		return;
+	}
+
 }
 
 int on_grid_clicked(Coord_t clicked) {
@@ -43,6 +48,14 @@ int on_candies_set_clicked(Coord_t clicked) {
 			if (candies_coords[i].y - 3 < clicked.y && candies_coords[i].y + 90 > clicked.y){
 				return candies[i].candy_id;
 			}
+	}
+	return -1;
+}
+
+int on_button_clicked(Coord_t clicked) {
+	if (ready_button_coord.x < clicked.x && ready_button_coord.x + 200 > clicked.x) {
+		if (ready_button_coord.y < clicked.y && ready_button_coord.y + 90 > clicked.y)
+			return 1;
 	}
 	return -1;
 }

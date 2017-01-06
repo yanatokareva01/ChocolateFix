@@ -4,7 +4,7 @@
 #define NUMBER_OF_LEVELS 8 
 	
 typedef struct {
-	int candies_grid[3][3];
+	int candies_grid[9];
 } Level_t;
 
 int load_levels( Level_t levels[NUMBER_OF_LEVELS], const char* file );

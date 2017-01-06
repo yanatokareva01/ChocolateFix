@@ -9,7 +9,6 @@
 
 static int gameRunning = 1;
 static ProgramState_t state = START;
-static Game_t game;
 
 /* Initializes all resources*/
 static void resource_init();

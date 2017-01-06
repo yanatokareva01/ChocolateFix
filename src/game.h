@@ -14,12 +14,14 @@ Candy_t candies[9];
 
 typedef struct {
 	Level_t levels[NUMBER_OF_LEVELS];
-	int level;
+	int current_level;
 } Game_t;
+
+Game_t game;
 
 void init_game_entities();
 void render();
 void set_or_reset_candy(int id);
 void choose_candy(int candy_id);
-
+void check_answer();
 #endif

@@ -48,6 +48,9 @@ void init_drawer() {
 	candies_coords_on_grid[7].y = 352;
 	candies_coords_on_grid[8].x = 727;
 	candies_coords_on_grid[8].y = 352;
+
+	ready_button_coord.x = 200;
+	ready_button_coord.y = 515;
 }
 
 void draw_background() {
@@ -77,4 +80,8 @@ void draw_candies (Candy_t candies[9]) {
 			draw_img_with_coord(candies[i].big_candy_image, candies_coords_on_grid[candies[i].id].x , candies_coords_on_grid[candies[i].id].y);
 		}
 	}
+}
+
+void draw_buttons() {
+	draw_img_with_coord(ready_button, ready_button_coord.x, ready_button_coord.y);
 }

@@ -8,6 +8,7 @@ void render() {
 	draw_background();
 	draw_grid();
 	draw_candies(candies);
+	draw_buttons();
 	finish_rendering();
 }
 
@@ -63,5 +64,16 @@ void choose_candy(int candy_id) {
 		}
 		else
 			candies[i].is_pressed = 0;
+	}
+}
+
+void check_answer() {
+	int i = 0;
+	for (i = 0; i < 9; ++i) {
+		if (candies[i].id == -1 || candies[i].id != game.levels[game.current_level].candies_grid[i]) {
+			/* make message to player*/
+			break;
+		}
+
 	}
 }

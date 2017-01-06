@@ -9,6 +9,7 @@ SDL_Surface *load_img(const char* filename);
 void load_imgs() {
 	load_candies_imgs();
 	load_background_imgs();
+	load_buttons_imgs();
 }
 
 void load_background_imgs() {
@@ -35,6 +36,10 @@ void load_candies_imgs() {
 	small_candies_imgs[6] = load_img("assets/31small.png");
 	small_candies_imgs[7] = load_img("assets/32small.png");
 	small_candies_imgs[8] = load_img("assets/33small.png");
+}
+
+void load_buttons_imgs() {
+	ready_button = load_img("assets/ready_button.png");
 }
 
 SDL_Surface* load_img( const char* filename ) {
