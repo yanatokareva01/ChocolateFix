@@ -4,6 +4,7 @@
 #include "load_img.h"
 #include "levels.h"
 #include "game.h"
+#include "draw.h"
 
 static int gameRunning = 1;
 static ProgramState_t state = START;
@@ -40,7 +41,9 @@ static void resource_init() {
 
 static void game_init() {
 	load_levels(game.levels, ENCODED_LEVELS);
-	
+	init_game_entities();
+	init_drawer();
+
 	state = START;
 }
 

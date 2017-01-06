@@ -24,9 +24,12 @@ void set_surface( int x, int y, SDL_Surface* surface ) {
 	dest.y = y;
 
 	SDL_BlitSurface( surface, NULL, screen, &dest );
-	SDL_UpdateWindowSurface(window);
 }
 
 void set_background() {
 	SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 206, 84));
+}
+
+void finish_rendering() {
+	SDL_UpdateWindowSurface(window);
 }

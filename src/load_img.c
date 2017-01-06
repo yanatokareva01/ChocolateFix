@@ -16,16 +16,25 @@ void load_background_imgs() {
 }
 
 void load_candies_imgs() {
-	candies[0] = load_img("assets/11.png");
-	candies[1] = load_img("assets/12.png");
-	candies[2] = load_img("assets/13.png");
-	candies[3] = load_img("assets/21.png");
-	candies[4] = load_img("assets/22.png");
-	candies[5] = load_img("assets/23.png");
-	candies[6] = load_img("assets/31.png");
-	candies[7] = load_img("assets/32.png");
-	candies[8] = load_img("assets/33.png");
-	if (candies[0] == NULL) printf("null((");
+	big_candies_imgs[0] = load_img("assets/11big.png");
+	big_candies_imgs[1] = load_img("assets/12big.png");
+	big_candies_imgs[2] = load_img("assets/13big.png");
+	big_candies_imgs[3] = load_img("assets/21big.png");
+	big_candies_imgs[4] = load_img("assets/22big.png");
+	big_candies_imgs[5] = load_img("assets/23big.png");
+	big_candies_imgs[6] = load_img("assets/31big.png");
+	big_candies_imgs[7] = load_img("assets/32big.png");
+	big_candies_imgs[8] = load_img("assets/33big.png");
+	
+	small_candies_imgs[0] = load_img("assets/11small.png");
+	small_candies_imgs[1] = load_img("assets/12small.png");
+	small_candies_imgs[2] = load_img("assets/13small.png");
+	small_candies_imgs[3] = load_img("assets/21small.png");
+	small_candies_imgs[4] = load_img("assets/22small.png");
+	small_candies_imgs[5] = load_img("assets/23small.png");
+	small_candies_imgs[6] = load_img("assets/31small.png");
+	small_candies_imgs[7] = load_img("assets/32small.png");
+	small_candies_imgs[8] = load_img("assets/33small.png");
 }
 
 SDL_Surface* load_img( const char* filename ) {

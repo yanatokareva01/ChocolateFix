@@ -1,7 +1,9 @@
 #ifndef _LOAD_IMG
 #define _LOAD_IMG
 
-SDL_Surface* candies[9];
+SDL_Surface* big_candies_imgs[9];
+SDL_Surface* small_candies_imgs[9];
+
 SDL_Surface* background;
 SDL_Surface* grid;
 
