@@ -16,15 +16,15 @@ void load_background_imgs() {
 }
 
 void load_candies_imgs() {
-	candies[0] = load_img("assets/1.png");
-	candies[1] = load_img("assets/2.png");
-	candies[2] = load_img("assets/3.png");
-	candies[3] = load_img("assets/4.png");
-	candies[4] = load_img("assets/5.png");
-	candies[5] = load_img("assets/6.png");
-	candies[6] = load_img("assets/7.png");
-	candies[7] = load_img("assets/8.png");
-	candies[8] = load_img("assets/9.png");
+	candies[0] = load_img("assets/11.png");
+	candies[1] = load_img("assets/12.png");
+	candies[2] = load_img("assets/13.png");
+	candies[3] = load_img("assets/21.png");
+	candies[4] = load_img("assets/22.png");
+	candies[5] = load_img("assets/23.png");
+	candies[6] = load_img("assets/31.png");
+	candies[7] = load_img("assets/32.png");
+	candies[8] = load_img("assets/33.png");
 	if (candies[0] == NULL) printf("null((");
 }
 
