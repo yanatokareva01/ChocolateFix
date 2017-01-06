@@ -67,13 +67,24 @@ void choose_candy(int candy_id) {
 	}
 }
 
+Candy_t find_candy_on_grid(int id) {
+	int i = 0;
+	for (i = 0; i < 9; ++i) {
+		if (candies[i].id == id)
+			return candies[i];
+	}
+	return candies[0];
+}
+
 void check_answer() {
 	int i = 0;
 	for (i = 0; i < 9; ++i) {
-		if (candies[i].id == -1 || candies[i].id != game.levels[game.current_level].candies_grid[i]) {
-			/* make message to player*/
-			break;
-		}
+		Candy_t candy = find_candy_on_grid(i);
 
+		if (candies[i].id == -1 || candy.candy_id != game.levels[game.current_level].candies_grid[i]) {
+			/* make message to player*/
+			return;
+		}
 	}
+	game.current_level++;
 }

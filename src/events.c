@@ -54,8 +54,9 @@ int on_candies_set_clicked(Coord_t clicked) {
 
 int on_button_clicked(Coord_t clicked) {
 	if (ready_button_coord.x < clicked.x && ready_button_coord.x + 200 > clicked.x) {
-		if (ready_button_coord.y < clicked.y && ready_button_coord.y + 90 > clicked.y)
+		if (ready_button_coord.y < clicked.y && ready_button_coord.y + 90 > clicked.y) {
 			return 1;
+		}
 	}
 	return -1;
 }
