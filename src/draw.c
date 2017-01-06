@@ -5,19 +5,12 @@
 #include "load_img.h"
 #include "app_window.h"
 
-typedef struct {
-	int x;
-	int y;
-} Coord_t;
-
-Coord_t candies_coords_on_grid[9];
-Coord_t candies_coords[9];
 Coord_t grid_coord;
 
 void init_drawer() {
 	grid_coord.x = 425;
 	grid_coord.y = 65;
-	
+
 	candies_coords[0].x = 434;
 	candies_coords[0].y = 515; 
 	candies_coords[1].x = 547;
@@ -76,8 +69,10 @@ void draw_img_with_coord_and_offset( SDL_Surface* surface, int x, int y, int x_o
 void draw_candies (Candy_t candies[9]) {
 	int i = 0;
 	for (i = 0; i < 9; ++i) {
-		if (candies[i].id == -1 )
-			draw_img_with_coord(candies[i].small_candy_image, candies_coords[i].x, candies_coords[i].y);
+		if (candies[i].id == -1){
+			if (candies[i].is_pressed == 0)
+				draw_img_with_coord(candies[i].small_candy_image, candies_coords[i].x, candies_coords[i].y);
+		}
 		else {
 			draw_img_with_coord(candies[i].big_candy_image, candies_coords_on_grid[candies[i].id].x , candies_coords_on_grid[candies[i].id].y);
 		}

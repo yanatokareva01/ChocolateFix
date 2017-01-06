@@ -5,6 +5,7 @@
 #include "levels.h"
 #include "game.h"
 #include "draw.h"
+#include "events.h"
 
 static int gameRunning = 1;
 static ProgramState_t state = START;
@@ -47,9 +48,6 @@ static void game_init() {
 	state = START;
 }
 
-static void process_l_mouse_button(SDL_MouseButtonEvent button) {
-	
-}
 
 static void process_events() {
 	static SDL_Event event;
