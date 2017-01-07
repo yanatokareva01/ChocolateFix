@@ -10,6 +10,7 @@ void load_imgs() {
 	load_candies_imgs();
 	load_background_imgs();
 	load_buttons_imgs();
+	load_hint_imgs();
 }
 
 void load_background_imgs() {
@@ -27,7 +28,7 @@ void load_candies_imgs() {
 	big_candies_imgs[7] = load_img("assets/32big.png");
 	big_candies_imgs[8] = load_img("assets/33big.png");
 	
-	small_candies_imgs[0] = load_img("assets/11small.png");
+	small_candies_imgs[0] = load_img("assets/11smalll.png");
 	small_candies_imgs[1] = load_img("assets/12small.png");
 	small_candies_imgs[2] = load_img("assets/13small.png");
 	small_candies_imgs[3] = load_img("assets/21small.png");
@@ -65,4 +66,9 @@ SDL_Surface* load_img( const char* filename ) {
 
 	/*Return the optimized image*/
 	return loadedImage;
+}
+
+
+void load_hint_imgs() {
+	hint_images[0] = load_img("assets/level1.png");
 }

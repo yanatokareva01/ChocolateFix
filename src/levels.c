@@ -25,9 +25,10 @@ int load_levels( Level_t levels[NUMBER_OF_LEVELS], const char* file ) {
 }
 
 int create_levels( const char* file ) {
-	int level4[9] = { 31, 32, 33, 22, 23, 21, 11, 12, 13 };
+	int level1[9] = { 11, 12, 13, 31, 32, 33, 21, 22, 23 };
 	int level2[9] = { 23, 33, 32, 31, 13, 12, 11, 22, 21 };
 	int level3[9] = { 33, 13, 23, 31, 11, 21, 32, 12, 22 };
+	int level4[9] = { 31, 32, 33, 22, 23, 21, 11, 12, 13 };
 	int level5[9] = { 21, 11, 13, 31, 23, 12, 33, 32, 22 };
 	int level6[9] = { 12, 11, 21, 13, 33, 31, 23, 32, 22 };
 	int level7[9] = { 31, 21, 12, 32, 11, 13, 23, 33, 22 };
@@ -39,7 +40,7 @@ int create_levels( const char* file ) {
 		printf("Can't create levels\n");
 		return 1;
 	}
-
+	fwrite(&level1, sizeof(int), 9, f);
 	fwrite(&level2, sizeof(int), 9, f);
 	fwrite(&level3, sizeof(int), 9, f);
 	fwrite(&level4, sizeof(int), 9, f);

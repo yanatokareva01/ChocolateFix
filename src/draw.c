@@ -11,6 +11,9 @@ void init_drawer() {
 	grid_coord.x = 425;
 	grid_coord.y = 65;
 
+	hint_coord.x = 20;
+	hint_coord.y = 65;
+
 	candies_coords[0].x = 434;
 	candies_coords[0].y = 515; 
 	candies_coords[1].x = 547;
@@ -84,4 +87,8 @@ void draw_candies (Candy_t candies[9]) {
 
 void draw_buttons() {
 	draw_img_with_coord(ready_button, ready_button_coord.x, ready_button_coord.y);
+}
+
+void draw_hint() {
+	draw_img_with_coord(hint_images[game.current_level], hint_coord.x, hint_coord.y);
 }

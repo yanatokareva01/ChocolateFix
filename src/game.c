@@ -9,6 +9,7 @@ void render() {
 	draw_grid();
 	draw_candies(candies);
 	draw_buttons();
+	draw_hint();
 	finish_rendering();
 }
 
@@ -87,4 +88,5 @@ void check_answer() {
 		}
 	}
 	game.current_level++;
+	printf("level++: %d\n", game.current_level);
 }
