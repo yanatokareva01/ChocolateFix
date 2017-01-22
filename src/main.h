@@ -8,7 +8,10 @@
 
 typedef enum {
 	START,
+	MENU,
 	GAME
 } ProgramState_t;
 
+ProgramState_t state;
+int game_running;
 #endif   

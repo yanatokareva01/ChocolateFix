@@ -7,10 +7,15 @@ SDL_Surface *load_img(const char* filename);
 
 
 void load_imgs() {
+	load_logo();
 	load_candies_imgs();
 	load_background_imgs();
 	load_buttons_imgs();
 	load_hint_imgs();
+}
+
+void load_logo() {
+	logo = load_img("assets/logo.png");
 }
 
 void load_background_imgs() {
@@ -42,6 +47,10 @@ void load_candies_imgs() {
 void load_buttons_imgs() {
 	ready_button = load_img("assets/ready_button.png");
 	reset_button = load_img("assets/reset_button.png");
+	
+	start_button = load_img("assets/start_button.png");
+	settings_button = load_img("assets/settings_button.png");
+	exit_button = load_img("assets/exit_button.png");
 }
 
 SDL_Surface* load_img( const char* filename ) {

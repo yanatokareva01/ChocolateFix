@@ -1,16 +1,17 @@
 #include "SDL2/SDL.h"
 #include "game.h"
 #include "draw.h"
+#include "main.h"
 #include "events.h"
 #include <stdio.h>
 
-void process_l_mouse_button(SDL_MouseButtonEvent button) {
+void process_l_mouse_button_in_game(SDL_MouseButtonEvent button) {
 	int id;
 	int candy_id;
 	Coord_t clicked;
 	
 	SDL_GetMouseState (&clicked.x, &clicked.y);
-	
+
 	id = on_grid_clicked(clicked);
 	if (id != -1) {
 		set_or_reset_candy(id);
@@ -32,6 +33,55 @@ void process_l_mouse_button(SDL_MouseButtonEvent button) {
 		reset_grid();
 		return;
 	}
+}
+
+void process_l_mouse_button_in_menu(SDL_MouseButtonEvent button) {
+	Coord_t clicked;
+	
+	SDL_GetMouseState (&clicked.x, &clicked.y);
+
+	if (on_start_button_clicked(clicked) == 1) {
+		state = GAME;
+		return;
+	}
+
+	if (on_settings_button_clicked(clicked) == 1) {
+		printf("on settings clicked\n");
+		return;
+	}
+
+	if (on_exit_button_clicked(clicked) == 1) {
+		game_running = 0;
+		return;
+	}
+}
+
+int on_start_button_clicked(Coord_t clicked) {
+	if (start_button_coord.x < clicked.x && start_button_coord.x + 182 > clicked.x) {
+		if (start_button_coord.y < clicked.y && start_button_coord.y + 93 > clicked.y) {
+			return 1;
+		}
+	}
+	return -1;	
+}
+
+int on_settings_button_clicked(Coord_t clicked) {
+	if (settings_button_coord.x < clicked.x && settings_button_coord.x + 182 > clicked.x) {
+		if (settings_button_coord.y < clicked.y && settings_button_coord.y + 93 > clicked.y) {
+			return 1;
+		}
+	}
+	return -1;	
+}
+
+
+int on_exit_button_clicked(Coord_t clicked) {
+	if (exit_button_coord.x < clicked.x && exit_button_coord.x + 182 > clicked.x) {
+		if (exit_button_coord.y < clicked.y && exit_button_coord.y + 93 > clicked.y) {
+			return 1;
+		}
+	}
+	return -1;	
 }
 
 int on_grid_clicked(Coord_t clicked) {

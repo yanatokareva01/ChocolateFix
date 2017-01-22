@@ -20,7 +20,8 @@ typedef struct {
 Game_t game;
 
 void init_game_entities();
-void render();
+void render_game();
+void render_menu();
 void set_or_reset_candy(int id);
 void choose_candy(int candy_id);
 void check_answer();

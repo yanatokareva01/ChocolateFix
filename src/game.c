@@ -4,14 +4,22 @@
 #include "load_img.h"
 #include "draw.h"
 
-void render() {
+void render_game() {
 	draw_background();
 	draw_grid();
 	draw_candies(candies);
-	draw_buttons();
+	draw_game_buttons();
 	draw_hint();
 	finish_rendering();
 }
+
+void render_menu() {
+	draw_background();
+	draw_logo();
+	draw_menu_buttons();
+	finish_rendering();
+}
+
 
 
 void init_game_entities() {

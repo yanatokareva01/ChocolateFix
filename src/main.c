@@ -7,9 +7,6 @@
 #include "draw.h"
 #include "events.h"
 
-static int gameRunning = 1;
-static ProgramState_t state = START;
-
 /* Initializes all resources*/
 static void resource_init();
 
@@ -44,7 +41,8 @@ static void game_init() {
 	init_game_entities();
 	init_drawer();
 
-	state = START;
+	state = MENU;
+	game_running = 1;
 }
 
 
@@ -55,21 +53,28 @@ static void process_events() {
 		
 		switch (event.type) {
 			case SDL_QUIT:
-				gameRunning = 0;
+				game_running = 0;
 				break;
 			case SDL_MOUSEBUTTONDOWN:
-				if (event.button.button == SDL_BUTTON_LEFT)
-					process_l_mouse_button(event.button);
+				if (event.button.button == SDL_BUTTON_LEFT) {
+					if (state == GAME)
+						process_l_mouse_button_in_game(event.button);
+					else if (state == MENU)
+						process_l_mouse_button_in_menu(event.button);
+				}
 				break;
 		}
 	}
 }
 
 static void main_loop() {
-	while( gameRunning ) {
+	while( game_running ) {
 		process_events();
-		render();
-	}	
+		if (state == GAME)
+			render_game();
+		else if (state == MENU)
+			render_menu();
+	}
 }
 
 static void clean_up() {

@@ -8,6 +8,9 @@
 Coord_t grid_coord;
 
 void init_drawer() {
+	logo_coord.x = 320;
+	logo_coord.y = 30;
+
 	grid_coord.x = 425;
 	grid_coord.y = 65;
 
@@ -56,6 +59,13 @@ void init_drawer() {
 	ready_button_coord.y = 515;
 	reset_button_coord.x = 20;
 	reset_button_coord.y = 515;
+	
+	start_button_coord.x = 400;
+	start_button_coord.y = 290;
+	settings_button_coord.x = 400;
+	settings_button_coord.y = 408;
+	exit_button_coord.x = 400;
+	exit_button_coord.y = 526;
 }
 
 void draw_background() {
@@ -87,11 +97,21 @@ void draw_candies (Candy_t candies[9]) {
 	}
 }
 
-void draw_buttons() {
+void draw_game_buttons() {
 	draw_img_with_coord(ready_button, ready_button_coord.x, ready_button_coord.y);
 	draw_img_with_coord(reset_button, reset_button_coord.x, reset_button_coord.y);
 }
 
+void draw_menu_buttons() {
+	draw_img_with_coord(start_button, start_button_coord.x, start_button_coord.y);
+	draw_img_with_coord(settings_button, settings_button_coord.x, settings_button_coord.y);
+	draw_img_with_coord(exit_button, exit_button_coord.x, exit_button_coord.y);
+}
+
 void draw_hint() {
 	draw_img_with_coord(hint_images[game.current_level], hint_coord.x, hint_coord.y);
+}
+
+void draw_logo() {
+	draw_img_with_coord(logo, logo_coord.x, logo_coord.y);	
 }
