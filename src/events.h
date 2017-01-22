@@ -8,6 +8,7 @@ int on_candies_set_clicked(Coord_t clicked);
 int on_grid_clicked(Coord_t clicked);
 int on_ready_button_clicked(Coord_t clicked);
 int on_reset_button_clicked(Coord_t clicked);
+int on_menu_button_clicked(Coord_t clicked);
 
 int on_start_button_clicked(Coord_t clicked);
 int on_settings_button_clicked(Coord_t clicked);

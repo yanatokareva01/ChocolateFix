@@ -11,6 +11,7 @@ Coord_t hint_coord;
 Coord_t candies_coords_on_grid[9];
 Coord_t ready_button_coord;
 Coord_t reset_button_coord;
+Coord_t menu_button_coord;
 Coord_t start_button_coord;
 Coord_t exit_button_coord;
 Coord_t settings_button_coord;

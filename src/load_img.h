@@ -6,6 +6,7 @@ SDL_Surface* big_candies_imgs[9];
 SDL_Surface* small_candies_imgs[9];
 SDL_Surface* ready_button;
 SDL_Surface* reset_button;
+SDL_Surface* menu_button;
 SDL_Surface* start_button;
 SDL_Surface* settings_button;
 SDL_Surface* exit_button;

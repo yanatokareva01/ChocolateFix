@@ -59,6 +59,8 @@ void init_drawer() {
 	ready_button_coord.y = 515;
 	reset_button_coord.x = 20;
 	reset_button_coord.y = 515;
+	menu_button_coord.x = 890;
+	menu_button_coord.y = 10;
 	
 	start_button_coord.x = 400;
 	start_button_coord.y = 290;
@@ -100,6 +102,7 @@ void draw_candies (Candy_t candies[9]) {
 void draw_game_buttons() {
 	draw_img_with_coord(ready_button, ready_button_coord.x, ready_button_coord.y);
 	draw_img_with_coord(reset_button, reset_button_coord.x, reset_button_coord.y);
+	draw_img_with_coord(menu_button, menu_button_coord.x, menu_button_coord.y);
 }
 
 void draw_menu_buttons() {

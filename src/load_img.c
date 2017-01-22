@@ -47,7 +47,8 @@ void load_candies_imgs() {
 void load_buttons_imgs() {
 	ready_button = load_img("assets/ready_button.png");
 	reset_button = load_img("assets/reset_button.png");
-	
+	menu_button = load_img("assets/menu_button.png");
+
 	start_button = load_img("assets/start_button.png");
 	settings_button = load_img("assets/settings_button.png");
 	exit_button = load_img("assets/exit_button.png");

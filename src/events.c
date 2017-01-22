@@ -33,6 +33,11 @@ void process_l_mouse_button_in_game(SDL_MouseButtonEvent button) {
 		reset_grid();
 		return;
 	}
+
+	if (on_menu_button_clicked(clicked) == 1) {
+		state = MENU;
+		return;
+	}
 }
 
 void process_l_mouse_button_in_menu(SDL_MouseButtonEvent button) {
@@ -54,6 +59,15 @@ void process_l_mouse_button_in_menu(SDL_MouseButtonEvent button) {
 		game_running = 0;
 		return;
 	}
+}
+
+int on_menu_button_clicked(Coord_t clicked) {
+	if (menu_button_coord.x < clicked.x && menu_button_coord.x + 93 > clicked.x) {
+		if (menu_button_coord.y < clicked.y && menu_button_coord.y + 45 > clicked.y) {
+			return 1;
+		}
+	}
+	return -1;	
 }
 
 int on_start_button_clicked(Coord_t clicked) {
