@@ -52,8 +52,10 @@ void init_drawer() {
 	candies_coords_on_grid[8].x = 727;
 	candies_coords_on_grid[8].y = 352;
 
-	ready_button_coord.x = 200;
+	ready_button_coord.x = 223;
 	ready_button_coord.y = 515;
+	reset_button_coord.x = 20;
+	reset_button_coord.y = 515;
 }
 
 void draw_background() {
@@ -87,6 +89,7 @@ void draw_candies (Candy_t candies[9]) {
 
 void draw_buttons() {
 	draw_img_with_coord(ready_button, ready_button_coord.x, ready_button_coord.y);
+	draw_img_with_coord(reset_button, reset_button_coord.x, reset_button_coord.y);
 }
 
 void draw_hint() {

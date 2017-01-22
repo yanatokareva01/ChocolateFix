@@ -41,6 +41,7 @@ void load_candies_imgs() {
 
 void load_buttons_imgs() {
 	ready_button = load_img("assets/ready_button.png");
+	reset_button = load_img("assets/reset_button.png");
 }
 
 SDL_Surface* load_img( const char* filename ) {
@@ -71,4 +72,8 @@ SDL_Surface* load_img( const char* filename ) {
 
 void load_hint_imgs() {
 	hint_images[0] = load_img("assets/level1.png");
+	hint_images[1] = load_img("assets/level2.png");
+	hint_images[2] = load_img("assets/level3.png");
+	hint_images[3] = load_img("assets/level4.png");
+	hint_images[4] = load_img("assets/level5.png");
 }

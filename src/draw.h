@@ -9,6 +9,7 @@ typedef struct {
 Coord_t hint_coord;
 Coord_t candies_coords_on_grid[9];
 Coord_t ready_button_coord;
+Coord_t reset_button_coord;
 Coord_t candies_coords[9];
 
 void init_drawer();

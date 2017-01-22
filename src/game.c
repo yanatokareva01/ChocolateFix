@@ -87,6 +87,19 @@ void check_answer() {
 			return;
 		}
 	}
+	level_up();
+}
+
+void level_up() {
 	game.current_level++;
+	reset_grid();
 	printf("level++: %d\n", game.current_level);
+}
+
+void reset_grid() {
+	int i = 0;
+	for (i = 0; i < 9; ++i) {
+		candies[i].id = -1;
+		candies[i].is_pressed = 0;
+	}
 }
