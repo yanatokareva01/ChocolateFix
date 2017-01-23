@@ -18,6 +18,9 @@ Coord_t ready_button_coord;
 Coord_t reset_button_coord;
 Coord_t menu_button_coord;
 
+Coord_t main_menu_button_coord;
+Coord_t new_game_button_coord;
+
 void init_drawer();
 void draw_img_with_coord( SDL_Surface* surface, int x, int y );
 
@@ -31,4 +34,5 @@ void draw_hint();
 
 void draw_logo();
 void draw_menu_buttons();
+void draw_settings_buttons();
 #endif

@@ -51,7 +51,7 @@ void process_l_mouse_button_in_menu(SDL_MouseButtonEvent button) {
 	}
 
 	if (on_settings_button_clicked(clicked) == 1) {
-		printf("on settings clicked\n");
+		state = SETTINGS;
 		return;
 	}
 
@@ -59,6 +59,43 @@ void process_l_mouse_button_in_menu(SDL_MouseButtonEvent button) {
 		game_running = 0;
 		return;
 	}
+}
+
+void process_l_mouse_button_in_settings(SDL_MouseButtonEvent button) {
+	Coord_t clicked;
+	
+	SDL_GetMouseState (&clicked.x, &clicked.y);
+
+	if (on_main_menu_button_clicked(clicked) == 1) {
+		state = MENU;
+		return;
+	}
+
+	if (on_new_game_button_clicked(clicked) == 1) {
+		game.current_level = 0;
+		state = GAME;
+		return;
+	}	
+	
+	SDL_GetMouseState (&clicked.x, &clicked.y);
+}
+
+int on_main_menu_button_clicked(Coord_t clicked) {
+	if (main_menu_button_coord.x < clicked.x && main_menu_button_coord.x + 182 > clicked.x) {
+		if (main_menu_button_coord.y < clicked.y && main_menu_button_coord.y + 93 > clicked.y) {
+			return 1;
+		}
+	}
+	return -1;
+}
+
+int on_new_game_button_clicked(Coord_t clicked) {
+	if (new_game_button_coord.x < clicked.x && main_menu_button_coord.x + 182 > clicked.x) {
+		if (new_game_button_coord.y < clicked.y && new_game_button_coord.y + 93 > clicked.y) {
+			return 1;
+		}
+	}
+	return -1;	
 }
 
 int on_menu_button_clicked(Coord_t clicked) {

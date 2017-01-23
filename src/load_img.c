@@ -52,6 +52,9 @@ void load_buttons_imgs() {
 	start_button = load_img("assets/start_button.png");
 	settings_button = load_img("assets/settings_button.png");
 	exit_button = load_img("assets/exit_button.png");
+
+	main_menu_button = load_img("assets/main_menu_button.png");
+	new_game_button = load_img("assets/new_game_button.png");
 }
 
 SDL_Surface* load_img( const char* filename ) {

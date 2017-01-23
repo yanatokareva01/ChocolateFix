@@ -25,8 +25,10 @@ void set_or_reset_candy(int id);
 void choose_candy(int candy_id);
 void reset_grid();
 
-void render_menu();
 void check_answer();
 void level_up();
+
+void render_menu();
+void render_settings();
 void render_game();
 #endif

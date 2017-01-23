@@ -68,6 +68,11 @@ void init_drawer() {
 	settings_button_coord.y = 408;
 	exit_button_coord.x = 400;
 	exit_button_coord.y = 526;
+
+	new_game_button_coord.x = 400;
+	new_game_button_coord.y = 290;
+	main_menu_button_coord.x = 400;
+	main_menu_button_coord.y = 408;
 }
 
 void draw_background() {
@@ -105,6 +110,11 @@ void draw_menu_buttons() {
 	draw_img_with_coord(start_button, start_button_coord.x, start_button_coord.y);
 	draw_img_with_coord(settings_button, settings_button_coord.x, settings_button_coord.y);
 	draw_img_with_coord(exit_button, exit_button_coord.x, exit_button_coord.y);
+}
+
+void draw_settings_buttons() {
+	draw_img_with_coord(main_menu_button, main_menu_button_coord.x, main_menu_button_coord.y);
+	draw_img_with_coord(new_game_button, new_game_button_coord.x, new_game_button_coord.y);
 }
 
 void draw_hint() {

@@ -70,6 +70,8 @@ static void process_events() {
 						process_l_mouse_button_in_game(event.button);
 					else if (state == MENU)
 						process_l_mouse_button_in_menu(event.button);
+					else if (state == SETTINGS)
+						process_l_mouse_button_in_settings(event.button);
 				}
 				break;
 		}
@@ -83,6 +85,8 @@ static void main_loop() {
 			render_game();
 		else if (state == MENU)
 			render_menu();
+		else if (state == SETTINGS)
+			render_settings();
 	}
 }
 

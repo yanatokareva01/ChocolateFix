@@ -10,6 +10,8 @@ SDL_Surface* menu_button;
 SDL_Surface* start_button;
 SDL_Surface* settings_button;
 SDL_Surface* exit_button;
+SDL_Surface* main_menu_button;
+SDL_Surface* new_game_button;
 SDL_Surface* background;
 SDL_Surface* grid;
 SDL_Surface* hint_images[5];

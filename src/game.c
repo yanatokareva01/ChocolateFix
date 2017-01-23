@@ -20,7 +20,12 @@ void render_menu() {
 	finish_rendering();
 }
 
-
+void render_settings() {
+	draw_background();
+	draw_logo();
+	draw_settings_buttons();
+	finish_rendering();
+}
 
 void init_game_entities() {
 	int i = 0;
