@@ -2,7 +2,7 @@
 
 Chocolate Fix is a simple logical game, written on C language. 
 
-The idea belongs to[ThinkFun](http://www.thinkfun.com/products/chocolate-fix/).
+The idea belongs to [ThinkFun](http://www.thinkfun.com/products/chocolate-fix/).
 ### Dependencies
 This game requires [SDL2](https://www.libsdl.org) and [SDL2_image](https://www.libsdl.org/projects/SDL_image/) installed
 
