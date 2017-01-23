@@ -87,6 +87,7 @@ Candy_t find_candy_on_grid(int id) {
 
 void check_answer() {
 	int i = 0;
+
 	for (i = 0; i < 9; ++i) {
 		Candy_t candy = find_candy_on_grid(i);
 
@@ -101,7 +102,6 @@ void check_answer() {
 void level_up() {
 	game.current_level++;
 	reset_grid();
-	printf("level++: %d\n", game.current_level);
 }
 
 void reset_grid() {

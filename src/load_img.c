@@ -60,25 +60,22 @@ SDL_Surface* load_img( const char* filename ) {
 	
 	/*Initialize PNG loading*/
 	int imgFlags = IMG_INIT_PNG;
-	if( !( IMG_Init( imgFlags ) & imgFlags ) ) {
-		printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
+	if( !(IMG_Init( imgFlags) & imgFlags) ) {
+		fprintf(stderr, "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
 		return NULL;
 	}	
 
 	/*Load the img using SDL_image*/
 	loadedImage = IMG_Load(filename);
 
-	printf("loading img: %s\n", filename);		
-
 	/*If the image loaded*/
-	if( loadedImage == NULL ) {
-		printf("Error opening image %s\n", filename);
+	if(loadedImage == NULL) {
+		fprintf(stderr, "Error opening image %s\n", filename);
 	}
 
 	/*Return the optimized image*/
 	return loadedImage;
 }
-
 
 void load_hint_imgs() {
 	hint_images[0] = load_img("assets/level1.png");

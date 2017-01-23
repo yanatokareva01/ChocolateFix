@@ -4,7 +4,8 @@
 #define SCREEN_TITLE "Chocolate Fix"
 #define SCREEN_WIDTH 1000
 #define SCREEN_HEIGHT 650
-#define ENCODED_LEVELS "resources/levels"
+#define LEVELS_FILE "resources/levels"
+#define STATE_FILE "resources/state"
 
 typedef enum {
 	START,
@@ -13,5 +14,6 @@ typedef enum {
 } ProgramState_t;
 
 ProgramState_t state;
+
 int game_running;
 #endif   

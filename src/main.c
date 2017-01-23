@@ -20,7 +20,7 @@ static void main_loop();
 static void clean_up();
 
 int main(int argc, char** argv) {
-	if (argc == 2){  create_levels(ENCODED_LEVELS); return 0; } 
+	if (argc == 2){  create_levels(LEVELS_FILE); return 0; } 
 	resource_init();
 	game_init();
 
@@ -37,7 +37,16 @@ static void resource_init() {
 }
 
 static void game_init() {
-	load_levels(game.levels, ENCODED_LEVELS);
+	
+	if (load_levels(LEVELS_FILE) != 0) {
+		create_levels(LEVELS_FILE);
+		load_levels(LEVELS_FILE);
+	}
+
+	if (load_state(STATE_FILE) != 0) {
+		game.current_level = 0;
+	}
+
 	init_game_entities();
 	init_drawer();
 
@@ -78,5 +87,5 @@ static void main_loop() {
 }
 
 static void clean_up() {
-
+	save_state(STATE_FILE);
 }

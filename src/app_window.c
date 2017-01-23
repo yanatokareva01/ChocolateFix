@@ -9,9 +9,9 @@ int init_app_window(const char* title, int width, int height) {
 		return -1;
 	
 	window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
-	if ( window == NULL ) {
-		printf("can't create window");
-		return -1;
+	if (window == NULL) {
+		fputs("Can't create window", stderr);
+		return 1;
 	}
 	screen = SDL_GetWindowSurface( window );
 	
@@ -23,7 +23,7 @@ void set_surface( int x, int y, SDL_Surface* surface ) {
 	dest.x = x;
 	dest.y = y;
 
-	SDL_BlitSurface( surface, NULL, screen, &dest );
+	SDL_BlitSurface(surface, NULL, screen, &dest);
 }
 
 void set_background() {

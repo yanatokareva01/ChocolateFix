@@ -7,6 +7,8 @@ typedef struct {
 	int candies_grid[9];
 } Level_t;
 
-int load_levels( Level_t levels[NUMBER_OF_LEVELS], const char* file );
-int create_levels( const char* file );
+int create_levels	( const char* file );
+int load_levels		( const char* file );
+int save_state		( const char* file );
+int load_state		( const char* state_file );
 #endif 
