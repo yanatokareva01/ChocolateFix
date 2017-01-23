@@ -86,4 +86,9 @@ void load_hint_imgs() {
 	hint_images[2] = load_img("assets/level3.png");
 	hint_images[3] = load_img("assets/level4.png");
 	hint_images[4] = load_img("assets/level5.png");
+	hint_images[5] = load_img("assets/level6.png");
+	hint_images[6] = load_img("assets/level7.png");
+	hint_images[7] = load_img("assets/level8.png");
+	hint_images[8] = load_img("assets/level9.png");
+	hint_images[9] = load_img("assets/level10.png");
 }

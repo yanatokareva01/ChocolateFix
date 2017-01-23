@@ -14,7 +14,7 @@ SDL_Surface* main_menu_button;
 SDL_Surface* new_game_button;
 SDL_Surface* background;
 SDL_Surface* grid;
-SDL_Surface* hint_images[5];
+SDL_Surface* hint_images[10];
 
 void load_imgs();
 

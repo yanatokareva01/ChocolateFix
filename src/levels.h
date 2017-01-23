@@ -1,7 +1,7 @@
 #ifndef _LEVELS
 #define _LEVELS
 
-#define NUMBER_OF_LEVELS 8 
+#define NUMBER_OF_LEVELS 10
 	
 typedef struct {
 	int candies_grid[9];

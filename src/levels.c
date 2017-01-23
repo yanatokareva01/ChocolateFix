@@ -55,7 +55,8 @@ int create_levels( const char* file ) {
 	int level7[9] = { 31, 21, 12, 32, 11, 13, 23, 33, 22 };
 	int level8[9] = { 11, 12, 33, 21, 23, 32, 22, 13, 31 };
 	int level9[9] = { 31, 22, 13, 33, 21, 12, 32, 23, 11 };
-	
+	int level10[9] = { 31, 32, 22, 11, 32, 12, 21, 23, 13 };
+
 	FILE* f = fopen(file, "w+b");
 	
 	if ( f == NULL ) {
@@ -72,6 +73,7 @@ int create_levels( const char* file ) {
 	fwrite(&level7, sizeof(int), 9, f);
 	fwrite(&level8, sizeof(int), 9, f);
 	fwrite(&level9, sizeof(int), 9, f);
+	fwrite(&level10, sizeof(int), 9, f);
 	
 	fclose(f);
 	return 0;
