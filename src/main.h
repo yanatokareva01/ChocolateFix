@@ -11,7 +11,8 @@ typedef enum {
 	START,
 	MENU,
 	SETTINGS,
-	GAME
+	GAME,
+	GAME_OVER
 } ProgramState_t;
 
 ProgramState_t state;

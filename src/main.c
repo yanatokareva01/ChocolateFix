@@ -46,7 +46,7 @@ static void game_init() {
 	if (load_state(STATE_FILE) != 0) {
 		game.current_level = 0;
 	}
-
+	
 	init_game_entities();
 	init_drawer();
 
@@ -72,6 +72,8 @@ static void process_events() {
 						process_l_mouse_button_in_menu(event.button);
 					else if (state == SETTINGS)
 						process_l_mouse_button_in_settings(event.button);
+					else if (state == GAME_OVER)
+						process_l_mouse_button_in_game_over(event.button);
 				}
 				break;
 		}
@@ -87,6 +89,8 @@ static void main_loop() {
 			render_menu();
 		else if (state == SETTINGS)
 			render_settings();
+		else if (state == GAME_OVER)
+			render_game_over();
 	}
 }
 

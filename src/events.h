@@ -4,6 +4,9 @@
 void process_l_mouse_button_in_game(SDL_MouseButtonEvent button);
 void process_l_mouse_button_in_menu(SDL_MouseButtonEvent button);
 void process_l_mouse_button_in_settings(SDL_MouseButtonEvent button);
+void process_l_mouse_button_in_game_over(SDL_MouseButtonEvent button);
+
+int on_button_clicked(Coord_t clicked_coord, Coord_t button_coord, int widht, int height);
 
 int on_candies_set_clicked(Coord_t clicked);
 int on_grid_clicked(Coord_t clicked);

@@ -24,17 +24,17 @@ void process_l_mouse_button_in_game(SDL_MouseButtonEvent button) {
 		return;
 	}
 
-	if (on_ready_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, ready_button_coord, 182, 93) == 1) {
 		check_answer();
 		return;
 	}
 	
-	if (on_reset_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, reset_button_coord, 182, 93) == 1) {
 		reset_grid();
 		return;
 	}
 
-	if (on_menu_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, menu_button_coord, 93, 45) == 1) {
 		state = MENU;
 		return;
 	}
@@ -45,17 +45,17 @@ void process_l_mouse_button_in_menu(SDL_MouseButtonEvent button) {
 	
 	SDL_GetMouseState (&clicked.x, &clicked.y);
 
-	if (on_start_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, start_button_coord, 182, 93) == 1) {
 		state = GAME;
 		return;
 	}
 
-	if (on_settings_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, settings_button_coord, 182, 93) == 1) {
 		state = SETTINGS;
 		return;
 	}
 
-	if (on_exit_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, exit_button_coord, 182, 93) == 1) {
 		game_running = 0;
 		return;
 	}
@@ -66,12 +66,12 @@ void process_l_mouse_button_in_settings(SDL_MouseButtonEvent button) {
 	
 	SDL_GetMouseState (&clicked.x, &clicked.y);
 
-	if (on_main_menu_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, main_menu_button_coord, 182, 93) == 1) {
 		state = MENU;
 		return;
 	}
 
-	if (on_new_game_button_clicked(clicked) == 1) {
+	if (on_button_clicked(clicked, new_game_button_coord, 182, 93) == 1) {
 		game.current_level = 0;
 		state = GAME;
 		return;
@@ -80,59 +80,37 @@ void process_l_mouse_button_in_settings(SDL_MouseButtonEvent button) {
 	SDL_GetMouseState (&clicked.x, &clicked.y);
 }
 
-int on_main_menu_button_clicked(Coord_t clicked) {
-	if (main_menu_button_coord.x < clicked.x && main_menu_button_coord.x + 182 > clicked.x) {
-		if (main_menu_button_coord.y < clicked.y && main_menu_button_coord.y + 93 > clicked.y) {
-			return 1;
-		}
+void process_l_mouse_button_in_game_over(SDL_MouseButtonEvent button) {
+	Coord_t clicked;
+
+	SDL_GetMouseState(&clicked.x, &clicked.y);
+
+	if (on_button_clicked(clicked, exit_button_coord, 182, 93)) {
+		game.current_level = 0;
+		game_running = 0;
+		return;
 	}
-	return -1;
+
+	if (on_button_clicked(clicked, new_game_button_coord, 182, 93)) {
+		game.current_level = 0;
+		state = GAME;
+		return;
+	}
+
+	if (on_button_clicked(clicked, main_menu_button_coord, 182, 93)) {
+		game.current_level = 0;
+		state = MENU;
+		return;
+	}
 }
 
-int on_new_game_button_clicked(Coord_t clicked) {
-	if (new_game_button_coord.x < clicked.x && main_menu_button_coord.x + 182 > clicked.x) {
-		if (new_game_button_coord.y < clicked.y && new_game_button_coord.y + 93 > clicked.y) {
+int on_button_clicked(Coord_t clicked_coord, Coord_t button_coord, int width, int height) {
+	if (button_coord.x < clicked_coord.x && button_coord.x + width > clicked_coord.x) {
+		if (button_coord.y < clicked_coord.y && button_coord.y + height > clicked_coord.y) {
 			return 1;
 		}
 	}
-	return -1;	
-}
-
-int on_menu_button_clicked(Coord_t clicked) {
-	if (menu_button_coord.x < clicked.x && menu_button_coord.x + 93 > clicked.x) {
-		if (menu_button_coord.y < clicked.y && menu_button_coord.y + 45 > clicked.y) {
-			return 1;
-		}
-	}
-	return -1;	
-}
-
-int on_start_button_clicked(Coord_t clicked) {
-	if (start_button_coord.x < clicked.x && start_button_coord.x + 182 > clicked.x) {
-		if (start_button_coord.y < clicked.y && start_button_coord.y + 93 > clicked.y) {
-			return 1;
-		}
-	}
-	return -1;	
-}
-
-int on_settings_button_clicked(Coord_t clicked) {
-	if (settings_button_coord.x < clicked.x && settings_button_coord.x + 182 > clicked.x) {
-		if (settings_button_coord.y < clicked.y && settings_button_coord.y + 93 > clicked.y) {
-			return 1;
-		}
-	}
-	return -1;	
-}
-
-
-int on_exit_button_clicked(Coord_t clicked) {
-	if (exit_button_coord.x < clicked.x && exit_button_coord.x + 182 > clicked.x) {
-		if (exit_button_coord.y < clicked.y && exit_button_coord.y + 93 > clicked.y) {
-			return 1;
-		}
-	}
-	return -1;	
+	return 0;
 }
 
 int on_grid_clicked(Coord_t clicked) {
@@ -153,24 +131,6 @@ int on_candies_set_clicked(Coord_t clicked) {
 			if (candies_coords[i].y - 3 < clicked.y && candies_coords[i].y + 90 > clicked.y){
 				return candies[i].candy_id;
 			}
-	}
-	return -1;
-}
-
-int on_ready_button_clicked(Coord_t clicked) {
-	if (ready_button_coord.x < clicked.x && ready_button_coord.x + 182 > clicked.x) {
-		if (ready_button_coord.y < clicked.y && ready_button_coord.y + 93 > clicked.y) {
-			return 1;
-		}
-	}
-	return -1;
-}
-
-int on_reset_button_clicked(Coord_t clicked) {
-	if (reset_button_coord.x < clicked.x && reset_button_coord.x + 182 > clicked.x) {
-		if (reset_button_coord.y < clicked.y && reset_button_coord.y + 93 > clicked.y) {
-			return 1;
-		}
 	}
 	return -1;
 }

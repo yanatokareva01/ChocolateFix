@@ -35,4 +35,6 @@ void draw_hint();
 void draw_logo();
 void draw_menu_buttons();
 void draw_settings_buttons();
+
+void draw_game_over_buttons();
 #endif

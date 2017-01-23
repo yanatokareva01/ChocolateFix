@@ -117,6 +117,12 @@ void draw_settings_buttons() {
 	draw_img_with_coord(new_game_button, new_game_button_coord.x, new_game_button_coord.y);
 }
 
+void draw_game_over_buttons() {
+	draw_img_with_coord(main_menu_button, main_menu_button_coord.x, main_menu_button_coord.y);
+	draw_img_with_coord(new_game_button, new_game_button_coord.x, new_game_button_coord.y);	
+	draw_img_with_coord(exit_button, exit_button_coord.x, exit_button_coord.y);
+}
+
 void draw_hint() {
 	draw_img_with_coord(hint_images[game.current_level], hint_coord.x, hint_coord.y);
 }

@@ -31,4 +31,5 @@ void level_up();
 void render_menu();
 void render_settings();
 void render_game();
+void render_game_over();
 #endif

@@ -3,6 +3,7 @@
 #include "app_window.h"
 #include "load_img.h"
 #include "draw.h"
+#include "main.h"
 
 void render_game() {
 	draw_background();
@@ -27,6 +28,12 @@ void render_settings() {
 	finish_rendering();
 }
 
+void render_game_over() {
+	draw_background();
+	draw_logo();
+	draw_game_over_buttons();
+	finish_rendering();
+}
 void init_game_entities() {
 	int i = 0;
 	for (i = 0; i < 9; ++i) {
@@ -106,6 +113,9 @@ void check_answer() {
 
 void level_up() {
 	game.current_level++;
+	if (game.current_level == NUMBER_OF_LEVELS) {
+		state = GAME_OVER;
+	}
 	reset_grid();
 }
 
